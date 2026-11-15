@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaundryLink – Request Pickup or Grab Laundry Jobs</title>
+  <meta name="description" content="Submit a laundry pickup request or pick up jobs near you. Fast, simple, local laundry help.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">
+        <span class="logo-icon">🧺</span>
+        LaundryLink
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#request">Request Pickup</a></li>
+        <li><a href="#jobs">Open Jobs</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Laundry done.<br>Or laundry earned.</h1>
+        <p class="hero-sub">Submit a pickup request in seconds, or grab open laundry jobs near you and get paid for helping neighbors.</p>
+        <div class="hero-cta">
+          <a href="#request" class="btn btn-primary">Request Pickup</a>
+          <a href="#jobs" class="btn btn-secondary">View Open Jobs</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon">🚚</div>
+          <h3>Pickup on demand</h3>
+          <p>Someone comes to your door</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">💰</div>
+          <h3>Earn by helping</h3>
+          <p>Claim jobs that fit your schedule</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Submit a request</h3>
+          <p>Tell us your address, what needs washing, and when you’d like pickup.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Someone claims it</h3>
+          <p>A nearby helper sees your job and picks it up when it works for them.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Laundry gets done</h3>
+          <p>You get clean clothes back. Helpers earn for their time and effort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request form -->
+  <section id="request" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Request a laundry pickup</h2>
+      <p class="section-desc">Fill this out and your request will appear in the Open Jobs list for helpers to claim.</p>
+      
+      <form id="request-form" class="form-card">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name *</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+1 555 123 4567">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Pickup address *</label>
+          <input type="text" id="address" name="address" required placeholder="123 Main St, Apartment 4B, City">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="service">Service type *</label>
+            <select id="service" name="service" required>
+              <option value="">Select…</option>
+              <option value="Wash & Fold">Wash & Fold</option>
+              <option value="Wash, Dry & Iron">Wash, Dry & Iron</option>
+              <option value="Dry Cleaning">Dry Cleaning</option>
+              <option value="Just Pickup (I'll wash)">Just Pickup (I'll wash myself)</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bags">Approx. bags / items</label>
+            <input type="text" id="bags" name="bags" placeholder="e.g. 2 bags or 15 shirts">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Preferred pickup date *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Preferred time window</label>
+            <select id="time" name="time">
+              <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
+              <option value="Afternoon (12pm–5pm)">Afternoon (12pm–5pm)</option>
+              <option value="Evening (5pm–9pm)">Evening (5pm–9pm)</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes / special instructions</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Gate code, detergent preference, delicate items, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Submit Pickup Request</button>
+        <p class="form-note">This is a demo. Data is stored only in your browser (localStorage).</p>
+      </form>
+
+      <div id="success-message" class="success-message hidden">
+        <div class="success-icon">✓</div>
+        <h3>Request submitted!</h3>
+        <p>Your laundry request is now visible in the Open Jobs section. Someone can claim it soon.</p>
+        <a href="#jobs" class="btn btn-secondary">See Open Jobs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Jobs -->
+  <section id="jobs" class="section">
+    <div class="container">
+      <div class="jobs-header">
+        <div>
+          <h2 class="section-title">Open laundry jobs</h2>
+          <p class="section-desc">Claim a job that fits your schedule. Contact the customer after claiming.</p>
+        </div>
+        <button id="refresh-jobs" class="btn btn-outline">Refresh</button>
+      </div>
+
+      <div id="jobs-list" class="jobs-grid">
+        <!-- Jobs rendered by JS -->
+      </div>
+
+      <div id="no-jobs" class="empty-state hidden">
+        <div class="empty-icon">🧺</div>
+        <h3>No open jobs right now</h3>
+        <p>Be the first to submit a pickup request above, or check back later.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section section-alt">
+    <div class="container about-content">
+      <div>
+        <h2 class="section-title">About LaundryLink</h2>
+        <p>LaundryLink connects people who need laundry help with people who are happy to pick it up and earn a little extra. No accounts required for this demo — just submit or claim.</p>
+        <p>Perfect for busy professionals, students, parents, or anyone who wants clean clothes without the hassle (or wants to help neighbors and make some money).</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-num" id="total-requests">0</span>
+          <span class="stat-label">Requests submitted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="open-count">0</span>
+          <span class="stat-label">Currently open</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="claimed-count">0</span>
+          <span class="stat-label">Jobs claimed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🧺</span> LaundryLink
+        </div>
+        <p>Demo website built with HTML, CSS & JavaScript. Data stays in your browser.</p>
+      </div>
+      <p class="copyright">© 2026 LaundryLink · Made for demo purposes</p>
+    </div>
+  </footer>
+
+  <!-- Claim modal -->
+  <div id="claim-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3>Claim this job?</h3>
+      <p id="modal-job-summary"></p>
+      <div class="form-group">
+        <label for="claimer-name">Your name</label>
+        <input type="text" id="claimer-name" placeholder="So the customer knows who is coming">
+      </div>
+      <div class="form-group">
+        <label for="claimer-phone">Your phone</label>
+        <input type="tel" id="claimer-phone" placeholder="For coordination">
+      </div>
+      <div class="modal-actions">
+        <button id="confirm-claim" class="btn btn-primary">Yes, claim job</button>
+        <button class="btn btn-outline modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
